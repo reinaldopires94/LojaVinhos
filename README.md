@@ -1,4 +1,4 @@
-# Projeto em C#, .net e SQL - Server
+# Projeto em C#, .net e SQL - Server -  em desenvolvimento.
 A loja tem um backoffice, que apenas os utilizadores com perfil de “Admin” conseguirão entrar e que 
 permitirá fazer a gestão de utilizadores, produtos e encomendas.
 O frontend apresenta os produtos aos utilizadores e permitirá adicionar ao carrinho. No 
