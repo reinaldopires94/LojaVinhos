@@ -9,29 +9,30 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Security.Cryptography;
 
-
 namespace LojaVinhos
 {
-    public partial class loja : System.Web.UI.Page
+    public partial class alterarSenha : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-             
-        }
-        protected void btn_entrar_Click(object sender, EventArgs e)
-        {
-            //conexao a base de dados 
-            SqlConnection myConnection = new SqlConnection
-             (ConfigurationManager.ConnectionStrings["db_lojaVinhosConnectionString"].ConnectionString);
 
-            // comando para inserir na base de dados
+        }
+
+        protected void btn_alterar_Click(object sender, EventArgs e)
+        {
+
+            //1º passo conexao(ligacao) -> base de dados (webconfig)
+            SqlConnection myConn = new SqlConnection(ConfigurationManager.
+                ConnectionStrings["db_atec_casConnectionString"].ConnectionString);
+
+            // 2º comando para o sql
             SqlCommand myCommand = new SqlCommand();
 
-            // Parameters de input
-            myCommand.Parameters.AddWithValue("@utilizador", tb_email.Text);
-            myCommand.Parameters.AddWithValue("@senha", EncryptString(tb_senha.Text));
+            myCommand.Parameters.AddWithValue("@utilizador", Session["utilizador"]);
+            myCommand.Parameters.AddWithValue("@senha_antiga", EncryptString(tb_antiga.Text));
+            myCommand.Parameters.AddWithValue("@senha_nova", EncryptString(tb_nova.Text));
 
-            // Parameters de output
+            //cod para não inserir dois user iguais
             SqlParameter valor = new SqlParameter();
             valor.ParameterName = "@retorno";
             valor.Direction = ParameterDirection.Output;
@@ -40,50 +41,47 @@ namespace LojaVinhos
             myCommand.Parameters.Add(valor);
 
 
-            //Stored Procedures
-            myCommand.CommandText = "login";
+
+            //procedures altera senha
+            myCommand.CommandText = "alterar_senha";
+
             myCommand.CommandType = CommandType.StoredProcedure;
 
-            //myCommand terá a conexao do myConnection
-            myCommand.Connection = myConnection;
+            //comando para ele executar no meu myConn
+            // apontar para base de dados
+            myCommand.Connection = myConn;
 
-            //abrir a conexao
-            myConnection.Open();
-            //excutar as linhas de comando
+            //abrir
+            myConn.Open();
+            //run conexao
             myCommand.ExecuteNonQuery();
-            //resposta da Stored Procedures
-            int respostaSP = Convert.ToInt32(myCommand.Parameters["@retorno"].Value);
-          
-           
+            //apanhar a resposta da base de dados SP
+            int respostaSp = Convert.ToInt32(myCommand.Parameters["@retorno"].Value);
 
-           
+            //apanhar o perfil
 
-            if (respostaSP == 0)
+
+            if (respostaSp == 0)
             {
-                lbl_men.Text = "**Utilizador ou Senha ERRADOS";
-
-
+                lbl_men.Text = "A senha não foi alterada";
             }
-            else if (respostaSP == 1 )
+            else if (respostaSp == 1)
             {
-                Session["utilizador"] = tb_email.Text;
-                Response.Redirect("produtos.aspx");
-               
-             
+
+
+                // label de mensagem
+                lbl_men.Text = "Sucesso";
+
+                //caminho para pag.
+                //Response.Redirect("gestao_formandos.aspx");
             }
-            else
-            {
-               
-                lbl_men.Text = "Conta inativa";
-            }
-            myConnection.Close();
 
-
-
+            //fechar
+            myConn.Close();
         }
         public static string EncryptString(string Message)
         {
-            string Passphrase = "cetacas";
+            string Passphrase = "atec";
             byte[] Results;
             System.Text.UTF8Encoding UTF8 = new System.Text.UTF8Encoding();
 

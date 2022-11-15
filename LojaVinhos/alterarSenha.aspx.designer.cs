@@ -11,7 +11,7 @@ namespace LojaVinhos
 {
 
 
-    public partial class produtoUnico
+    public partial class alterarSenha
     {
 
         /// <summary>
@@ -24,6 +24,33 @@ namespace LojaVinhos
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// Controle tb_antiga.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_antiga;
+
+        /// <summary>
+        /// Controle tb_nova.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tb_nova;
+
+        /// <summary>
+        /// Controle btn_alterar.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_alterar;
+
+        /// <summary>
         /// Controle lbl_men.
         /// </summary>
         /// <remarks>
@@ -31,41 +58,5 @@ namespace LojaVinhos
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbl_men;
-
-        /// <summary>
-        /// Controle rpt_vinhos1.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpt_vinhos1;
-
-        /// <summary>
-        /// Controle tb_quantidade.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_quantidade;
-
-        /// <summary>
-        /// Controle btn_confirmar.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_confirmar;
-
-        /// <summary>
-        /// Controle lbl_men2.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_men2;
     }
 }

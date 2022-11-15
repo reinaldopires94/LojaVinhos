@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="produtos.aspx.cs" Inherits="LojaVinhos.produtos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="meuCarrinho.aspx.cs" Inherits="LojaVinhos.meuCarrinho" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,20 +43,21 @@ https://www.tooplate.com/view/2114-pixie
             </div>
         </div>
 
-        
+
 
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
             <div class="container">
+                <asp:Button ID="btn_alterar" runat="server" Text="AlterarSenha" OnClick="btn_alterar_Click" />
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <asp:Label ID="lbl_user" runat="server" Text=""> <a href"carrinho.aspx"></a></asp:Label>
-                      
-                <asp:Button ID="btn_alterarSenha" runat="server" Text="Alterar Senha" OnClick="btn_alterarSenha_Click" class="button1" />
-                <div class="collapse navbar-collapse" id="navbarResponsive">
+                <asp:Label ID="lbl_user" runat="server" Text="">
+                    <a href"carrinho.aspx">
                     
+                </a></asp:Label>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a class="nav-link" href="loja.aspx">Home</a>
@@ -86,17 +87,6 @@ https://www.tooplate.com/view/2114-pixie
                         </div>
                     </div>
                     <div>
-                        <asp:Button ID="btn_desc" runat="server" Text="Preço: Descendente" OnClick="btn_desc_Click" Height="33px" Width="235px"  class="button1"/>
-                        &nbsp;<asp:Button ID="btn_asc" runat="server" Text="Preço: Ascendente" Height="33px" OnClick="btn_asc_Click" Width="225px" class="button1" />
-                    &nbsp;<asp:Button ID="btn_AZ" runat="server" Text="Listar A-Z" Height="33px" OnClick="btn_AZ_Click" Width="141px" class="button1"/>
-
-                    &nbsp;<asp:Button ID="btn_ZA" runat="server" Text="Listar Z-A" Height="33px" Width="141px" OnClick="btn_ZA_Click" class="button1"/>
-
-                    &nbsp;
-                        <asp:TextBox ID="tb_busca" runat="server" Height="33px" Width="228px" ></asp:TextBox>
-
-                    &nbsp;<asp:Button ID="btn_buscar" runat="server" Height="29px" OnClick="btn_buscar_Click" Text="Buscar" Width="76px" class="button1" />
-
                     </div>
 
                 </div>
@@ -108,16 +98,18 @@ https://www.tooplate.com/view/2114-pixie
                 <asp:Repeater ID="rpt_vinhos" runat="server">
                     <ItemTemplate>
                         <div class="item new col-md-4">
-                          <a href="produtoUnico.aspx?id=<%#Eval("num_vinho") %>">
-                                <div class="featured-item">
-                                 <img src=" <%#Eval("foto")%>" /></a>
-                                    <h4><%#Eval("nome")%> </h4>
-                           
-                                      
-                                     
-                                     
-                                    <h6><%#Eval("preco")%></h6>
-                                </div>
+
+                            <div class="featured-item">
+                                <img src=" <%#Eval("foto")%>" />
+                                <h5><%#Eval("nome")%> </h5>
+                                <h5><%#Eval("num_vinho")%> </h5>
+                                <h5><%#Eval("preco")%> </h5>
+                                <h5><%#Eval("tipo")%> </h5>
+                                <h5><%#Eval("util")%> </h5>
+                                <h6><%#Eval("quantidade")%></h6>
+                                <h6><%#Eval("TOTAL")%></h6>
+
+                            </div>
                             </a>
                         </div>
 
@@ -126,14 +118,13 @@ https://www.tooplate.com/view/2114-pixie
 
             </div>
         </div>
-        
 
         <div class="page-navigation">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <ul>
-                            <li class="current-page"><a href="#">1                    <li class="current-page"><a href="#">1</a></li>
+                            <li class="current-page"><a href="#">1</a></li>
                             <li><a href="#">2</a></li>
                             <li><a href="#">3</a></li>
                             <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
@@ -189,19 +180,6 @@ https://www.tooplate.com/view/2114-pixie
         </script>
 
     </form>
-    <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/63723b9ddaff0e1306d75022/1ghr3hnl8';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
 </body>
 
 </html>

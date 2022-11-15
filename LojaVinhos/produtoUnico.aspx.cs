@@ -15,14 +15,17 @@ namespace LojaVinhos
     public partial class produtoUnico : System.Web.UI.Page
     {
 
-       
+
+        
         protected void Page_Load(object sender, EventArgs e)
 
         {
-            int id;
-            
+            lbl_men.Text =""+ Session["utilizador"];
+           
 
+            int id;
             id = Convert.ToInt32(Request.QueryString["id"].ToString());
+
 
             //1º passo conexao(ligacao) -> base de dados (webconfig)
             //conexao a base de dados 
@@ -69,6 +72,7 @@ namespace LojaVinhos
 
 
 
+
                 produtos.Add(p);
             }
 
@@ -94,6 +98,13 @@ namespace LojaVinhos
 
         protected void btn_confirmar_Click(object sender, EventArgs e)
         {
+            if (Session["utilizador"]==null)
+            {
+                lbl_men2.Text = "Utilizador não logado!";
+            }
+            int id;
+            id = Convert.ToInt32(Request.QueryString["id"].ToString());
+
             //1º passo conexao(ligacao) -> base de dados (webconfig)
             //conexao a base de dados 
             SqlConnection myConnection = new SqlConnection
@@ -102,6 +113,8 @@ namespace LojaVinhos
             // comando para inserir na base de dados
             SqlCommand myCommand = new SqlCommand();
             myCommand.Parameters.AddWithValue("@quantidade", tb_quantidade.Text);
+            //myCommand.Parameters.AddWithValue("@user", Session["utilizador"]).ToString();
+            myCommand.Parameters.AddWithValue("@num_vinho", id);
 
 
             myCommand.CommandText = "trocar_quantidade";

@@ -11,7 +11,7 @@ namespace LojaVinhos
 {
 
 
-    public partial class produtoUnico
+    public partial class meuCarrinho
     {
 
         /// <summary>
@@ -24,48 +24,30 @@ namespace LojaVinhos
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Controle lbl_men.
+        /// Controle btn_alterar.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_men;
+        protected global::System.Web.UI.WebControls.Button btn_alterar;
 
         /// <summary>
-        /// Controle rpt_vinhos1.
+        /// Controle lbl_user.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater rpt_vinhos1;
+        protected global::System.Web.UI.WebControls.Label lbl_user;
 
         /// <summary>
-        /// Controle tb_quantidade.
+        /// Controle rpt_vinhos.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox tb_quantidade;
-
-        /// <summary>
-        /// Controle btn_confirmar.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_confirmar;
-
-        /// <summary>
-        /// Controle lbl_men2.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_men2;
+        protected global::System.Web.UI.WebControls.Repeater rpt_vinhos;
     }
 }

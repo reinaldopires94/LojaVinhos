@@ -12,11 +12,16 @@ using System.Web.UI.WebControls;
 namespace LojaVinhos
 {
     public partial class produtos : System.Web.UI.Page
+
     {
+       
         protected void Page_Load(object sender, EventArgs e)
         {
 
+          
+            lbl_user.Text = "Olá,  " + Session["utilizador"] + " :)";
 
+               
             //1º passo conexao(ligacao) -> base de dados (webconfig)
             //conexao a base de dados 
             SqlConnection myConnection = new SqlConnection
@@ -55,17 +60,16 @@ namespace LojaVinhos
                 p.foto = "data:image/jpeg;base64," + Convert.ToBase64String((byte[])dr["foto"]);
 
 
-
-
                 produtos.Add(p);
             }
-
+           
             myConnection.Close();
 
             rpt_vinhos.DataSource = produtos;
             rpt_vinhos.DataBind();
 
         }
+      
         public class produtos_loja
         {
             public string nome { get; set; }
@@ -76,12 +80,7 @@ namespace LojaVinhos
 
             public string num_vinho { get; set; }
 
-
-
-
-
         }
-
         protected void btn_desc_Click(object sender, EventArgs e)
         {
 
@@ -266,6 +265,8 @@ namespace LojaVinhos
 
         protected void btn_buscar_Click(object sender, EventArgs e)
         {
+           
+
             //1º passo conexao(ligacao) -> base de dados (webconfig)
             //conexao a base de dados 
             SqlConnection myConnection = new SqlConnection
@@ -312,6 +313,16 @@ namespace LojaVinhos
             rpt_vinhos.DataSource = produtos;
             rpt_vinhos.DataBind();
 
+        }
+
+        protected void btn_meuCarrinho_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("meuCarrinho.aspx");
+        }
+
+        protected void btn_alterarSenha_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("alterarSenha.aspx");
         }
     }
 }

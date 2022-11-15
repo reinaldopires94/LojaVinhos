@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="inserir_user.aspx.cs" Inherits="LojaVinhos.inserir_user" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="alterarSenha.aspx.cs" Inherits="LojaVinhos.alterarSenha" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +11,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 
-    <title>Loja de Vinhos - Cadastro</title>
+    <title>Loja de Vinhos - Alterar Senha</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -51,7 +51,7 @@ https://www.tooplate.com/view/2114-pixie
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto">
              <li class="nav-item">
-              <a class="nav-link" href="loja.aspx">Home</a>
+              <a class="nav-link" href="loja.aspx">Alterar Senha</a>
             </li>
             
           </ul>
@@ -66,32 +66,26 @@ https://www.tooplate.com/view/2114-pixie
         <div class="row">
           <div class="col-md-12">
             <div class="caption">
-              <h2>Cadastrar Conta</h2>
+              <h2>Alterar Senha</h2>
               <div class="line-dec"></div><br />
                  <div class="col-md-6">
                      
-                          <asp:TextBox ID="tb_nome" runat="server" class="form-control" placeholder="Nome Utilizador" ></asp:TextBox>
                          
-                          <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="tb_nome" ErrorMessage="*" ForeColor="Maroon"></asp:RequiredFieldValidator>
+                     <asp:TextBox ID="tb_antiga" runat="server"  class="form-control" placeholder="Senha Antiga"></asp:TextBox>
                          
                           <br />
-                          <asp:TextBox ID="tb_email" runat="server" class="form-control" placeholder="Email" ></asp:TextBox>
-                      
-                          <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="tb_email" ErrorMessage="Email Inválido" ForeColor="Maroon" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
-                      
-                          <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="*" ForeColor="Maroon" ControlToValidate="tb_email"></asp:RequiredFieldValidator>
-                      
+                         
+                     <asp:TextBox ID="tb_nova" runat="server"  class="form-control" placeholder="Nova Senha" ></asp:TextBox>
+                         
                     <br />
-
-                         <asp:TextBox ID="tb_senha" runat="server" class="form-control" placeholder="Senha" TextMode="Password" ></asp:TextBox> 
-                         
-                          <br />
-                     
                     </div>
                 <br />
-                <asp:Button ID="btn_entrar" runat="server" Text="Entrar" OnClick="btn_entrar_Click" class="main-button" ForeColor="Maroon" />
-                <br />
-                <asp:Label ID="lbl_men" runat="server" ForeColor="Maroon"></asp:Label>
+               
+                <asp:Button ID="btn_alterar" runat="server" Text="Alterar" OnClick="btn_alterar_Click" class="button1"/>
+                <br /><br />
+
+                
+                <asp:Label ID="lbl_men" runat="server" Text=""></asp:Label>
                 
             </div>
           </div>

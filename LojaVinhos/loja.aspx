@@ -77,7 +77,7 @@ https://www.tooplate.com/view/2114-pixie
               <div class="line-dec"></div><br />
                  <div class="col-md-6">
                       <fieldset>
-                          <asp:TextBox ID="tb_email" runat="server" class="form-control" placeholder="Email" ></asp:TextBox>
+                          <asp:TextBox ID="tb_email" runat="server" class="form-control" placeholder="Utilizador" ></asp:TextBox>
                       </fieldset><br />
                    
                      <fieldset>
@@ -85,16 +85,17 @@ https://www.tooplate.com/view/2114-pixie
                       </fieldset>
                     </div>
                 <br />
-               <div class="main-button">
-                <a href="#">Entrar
+              <asp:Button ID="btn_entrar" runat="server" Text="Entrar" OnClick="btn_entrar_Click" class="button1"/>
+                <br />
+                <a href="inserir_user.aspx">Cadastrar
                     
                 </a>
    
               </div>
                 
-                <asp:Button ID="btn_entrar" runat="server" Text="Entrar" OnClick="btn_entrar_Click" class="main-button" />
-                <br />
+               
                 <asp:Label ID="lbl_men" runat="server" ForeColor="Maroon"></asp:Label>
+               
             </div>
           </div>
         </div>
@@ -207,97 +208,24 @@ https://www.tooplate.com/view/2114-pixie
 
 
     <!-- Subscribe Form Starts Here -->
-    <div class="subscribe-form">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="section-heading">
-              <div class="line-dec"></div>
-              <h1>Subscribe on PIXIE now!</h1>
-            </div>
-          </div>
-          <div class="col-md-8 offset-md-2">
-            <div class="main-content">
-              <p>Integer vel turpis ultricies, lacinia ligula id, lobortis augue. Vivamus porttitor dui id dictum efficitur. Phasellus vel interdum elit.</p>
-              <div class="container">
-                <form id="subscribe" action="" method="get">
-                  <div class="row">
-                    <div class="col-md-7">
-                      <fieldset>
-                        <input name="email" type="text" class="form-control" id="email" 
-                        onfocus="if(this.value == 'Your Email...') { this.value = ''; }" 
-                    	onBlur="if(this.value == '') { this.value = 'Your Email...';}"
-                    	value="Your Email..." required="">
-                      </fieldset>
-                    </div>
-                    <div class="col-md-5">
-                      <fieldset>
-                        <button type="submit" id="form-submit" class="button">Subscribe Now!</button>
-                      </fieldset>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Subscribe Form Ends Here -->
-
-
-    
-    <!-- Footer Starts Here -->
-    <div class="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="logo">
-              <img src="assets/images/header-logo.png" alt="">
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="footer-menu">
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Help</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">How It Works ?</a></li>
-                <li><a href="#">Contact Us</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <div class="social-icons">
-              <ul>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="#"><i class="fa fa-rss"></i></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+   
     <!-- Footer Ends Here -->
 
 
-    <!-- Sub Footer Starts Here -->
-    <div class="sub-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="copyright-text">
-              <p>Copyright &copy; 2019 Company Name 
-                
-                - Design: <a rel="nofollow" href="https://www.facebook.com/tooplate">Tooplate</a></p>
+     <!-- Sub Footer Starts Here -->
+        <div class="sub-footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyright-text">
+                            <p>
+                            <p>5422 - Exercício de Avaliação - ATEC</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <!-- Sub Footer Ends Here -->
+        <!-- Sub Footer Ends Here -->
 
 
     <!-- Bootstrap core JavaScript -->
@@ -321,7 +249,19 @@ https://www.tooplate.com/view/2114-pixie
       }
     </script>
 
-
+      <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/63723b9ddaff0e1306d75022/1ghr3hnl8';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
   </body>
 
 </html>

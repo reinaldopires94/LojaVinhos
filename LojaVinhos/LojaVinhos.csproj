@@ -43,6 +43,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\..\Downloads\iTextSharp\iTextSharp\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\..\..\..\..\Downloads\iTextSharp\iTextSharp\itextsharp.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>..\..\..\..\..\..\Downloads\iTextSharp\iTextSharp\itextsharp.xtra.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -67,6 +76,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="alterarSenha.aspx" />
     <Content Include="assets\css\flex-slider.css" />
     <Content Include="assets\css\fontawesome.css" />
     <Content Include="assets\css\owl.css" />
@@ -75,6 +85,7 @@
     <Content Include="assets\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\fonts\slick.svg" />
     <Content Include="assets\images\about-us.jpg" />
+    <Content Include="assets\images\ativacao.jpg" />
     <Content Include="assets\images\banner-bg.jpg" />
     <Content Include="assets\images\big-01.jpg" />
     <Content Include="assets\images\big-02.jpg" />
@@ -125,6 +136,7 @@
     <Content Include="assets\js\flex-slider.js" />
     <Content Include="assets\js\isotope.js" />
     <Content Include="assets\js\owl.js" />
+    <Content Include="ativacao.aspx" />
     <Content Include="carrinho.aspx" />
     <Content Include="ckeditor\adapters\jquery.js" />
     <Content Include="ckeditor\build-config.js" />
@@ -476,6 +488,7 @@
     <Content Include="inserir_user.aspx" />
     <Content Include="inserir_vinhos.aspx" />
     <Content Include="loja.aspx" />
+    <Content Include="meuCarrinho.aspx" />
     <Content Include="produtos.aspx" />
     <Content Include="produtoUnico.aspx" />
     <Content Include="sobreNos.aspx" />
@@ -492,6 +505,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="alterarSenha.aspx.cs">
+      <DependentUpon>alterarSenha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="alterarSenha.aspx.designer.cs">
+      <DependentUpon>alterarSenha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ativacao.aspx.cs">
+      <DependentUpon>ativacao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ativacao.aspx.designer.cs">
+      <DependentUpon>ativacao.aspx</DependentUpon>
+    </Compile>
     <Compile Include="carrinho.aspx.cs">
       <DependentUpon>carrinho.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -526,6 +553,13 @@
     </Compile>
     <Compile Include="loja.aspx.designer.cs">
       <DependentUpon>loja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="meuCarrinho.aspx.cs">
+      <DependentUpon>meuCarrinho.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="meuCarrinho.aspx.designer.cs">
+      <DependentUpon>meuCarrinho.aspx</DependentUpon>
     </Compile>
     <Compile Include="produtos.aspx.cs">
       <DependentUpon>produtos.aspx</DependentUpon>
@@ -583,6 +617,7 @@
     <Content Include="vendor\bootstrap\js\bootstrap.min.js.map" />
     <Content Include="vendor\jquery\jquery.min.map" />
     <Content Include="vendor\jquery\jquery.slim.min.map" />
+    <Content Include="PDF\Template\pdf_loja_ok.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -590,6 +625,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

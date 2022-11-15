@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="sobreNos.aspx.cs" Inherits="LojaVinhos.sobreNos" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ativacao.aspx.cs" Inherits="LojaVinhos.ativacao" %>
+
 
   <head>
 
@@ -8,7 +9,7 @@
     <meta name="author" content="">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
 
-    <title>Lojas de Vinhos - Sobre Nós</title>
+    <title>Lojas de Vinhos - Aticação de conta</title>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -50,14 +51,7 @@ https://www.tooplate.com/view/2114-pixie
             <li class="nav-item">
               <a class="nav-link" href="loja.aspx">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="produtos.aspx">Produtos
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="sobreNos.aspx">Sobre Nós</a>
-              <span class="sr-only">(current)</span>
+         
           
           </ul>
         </div>
@@ -72,35 +66,23 @@ https://www.tooplate.com/view/2114-pixie
           <div class="col-md-12">
             <div class="section-heading">
               <div class="line-dec"></div>
-              <h1>Sobre Nós</h1>
+              <h1>Loja de Vinhos</h1>
             </div>
           </div>
           <div class="col-md-6">
             <div class="left-image">
-              <img src="assets/images/sobre1.jpg" alt="">
+              <img src="assets/images/ativacao.jpg" alt="">
             </div>
           </div>
           <div class="col-md-6">
             <div class="right-content">
-              <h4>Loja de Vinhos</h4>
-              <p>Meu nome é Reinaldo, estou à procura de novos desafios em transição de carreira e quero mergulhar neste universo da tecnologia.
-
-Estou no último ano do curso nível cinco de Técnico Especialista em Tecnologias e Programação de Sistema de Informação pela ATEC – Academia de Formação em Palmela. 
-
-Busco uma oportunidade no mercado de trabalho na área de tecnologia de programação, visando o desenvolvimento da minha carreira e geração de resultados a possibilitar o crescimento da empresa, das equipas e projetos. 
-
-Com experiência de 7 anos em rotinas de restaurantes, bares, sommelier e atendimento à clientes em grandes restaurantes e hotéis no Brasil, Irlanda e Portugal. Sou Tecnólogo em Recursos Humanos pela Faculdade Eça Queirós de Jandira, São Paulo – Brasil. 
-
-Realizei um intercâmbio em Dublin - Irlanda, onde estudei inglês avançado e trabalhei em diversas empresas em Dublin como a Guinness Storehouse por 3 anos. 
-
-Em Portugal conclui o primeiro nível do curso de Sommelier de vinhos português pela Associação de Escanções de Portugal em Lisboa.
-
-
-Agradeço a atenção e coloco-me ao inteiro dispor para contato pessoal. 
-
-Melhores cumprimentos. 
-Reinaldo Borba Pires Bezerra</p> 
+              <h4></h4>
               
+                <h1>"Sucesso"</h1><br />
+                    <h2>Conta Ativada :)</h2>
+               
+                
+
               <br>
               <p> Obrigado.</p>
               
@@ -163,4 +145,4 @@ Reinaldo Borba Pires Bezerra</p>
 
   </body>
 
-
+</html>

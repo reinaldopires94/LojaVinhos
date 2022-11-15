@@ -10,6 +10,7 @@ using System.Configuration;
 using System.Security.Cryptography;
 using System.Net;
 using System.Net.Mail;
+using System.Security.Permissions;
 
 namespace LojaVinhos
 {
@@ -32,6 +33,7 @@ namespace LojaVinhos
             // Parameters de input
             myCommand.Parameters.AddWithValue("@utilizador", tb_nome.Text);
             myCommand.Parameters.AddWithValue("@senha", EncryptString(tb_senha.Text));
+            myCommand.Parameters.AddWithValue("@email", tb_email.Text);
 
             // Parameters de output
             SqlParameter valor = new SqlParameter();
@@ -40,6 +42,8 @@ namespace LojaVinhos
             valor.SqlDbType = SqlDbType.Int;
 
             myCommand.Parameters.Add(valor);
+
+          
 
             //Stored Procedures
             myCommand.CommandText = "registrar_utilizador";
@@ -54,6 +58,8 @@ namespace LojaVinhos
             myCommand.ExecuteNonQuery();
             //resposta da Stored Procedures
             int respostaSP = Convert.ToInt32(myCommand.Parameters["@retorno"].Value);
+       
+            
             if (respostaSP == 0)
             {
                 lbl_men.Text = "Esse utilizador já existe";
@@ -61,13 +67,49 @@ namespace LojaVinhos
             }
             else if (respostaSP == 1)
             {
-                lbl_men.Text = "Concluído";
+                envia_email();
+                lbl_men.Text = "Cadrastro Concluído! \n Por Favor ative sua conta através do email.";
             }
             //fechar a conexao
             myConnection.Close();
 
 
         }
+        // ativacao de conta atraves do email
+        void envia_email()
+        {
+
+            MailMessage m = new MailMessage();
+            SmtpClient sc = new SmtpClient();
+
+            try
+            {
+                m.From = new MailAddress("reinaldo.bezerra.t0121950@edu.atec.pt");
+                m.To.Add(new MailAddress(tb_email.Text, "001Ativar conta"));
+
+                m.Subject = "Mail de ativação de conta";
+                m.IsBodyHtml = true;
+                m.Body = " Cadastro na Loja de Vinhos. Por Favor! Clica -> <a href='https://localhost:44396/ativacao.aspx?util="+
+                   EncryptString(tb_nome.Text) + "'>AQUI </a> <- para ativar sua conta";
+
+                sc.Host = "smtp.office365.com";
+                sc.Port = 587;
+
+                sc.Credentials = new System.Net.NetworkCredential
+                    ("reinaldo.bezerra.t0121950@edu.atec.pt", "!85397Avg@5");
+                sc.EnableSsl = true;
+                sc.Send(m);
+
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+
+
+        }
+
+        //func da encrypt Senha
         public static string EncryptString(string Message)
         {
             string Passphrase = "cetacas";
